@@ -8,4 +8,5 @@ __pycache__/
 .last_checked
 .gitconfig
 .ipynb_checkpoints/
-ch1-bike-reloot/figs/
+ch1-bike-reloot/figs
+my-stuff/ch10-nlp-parlament/sessions.json/
