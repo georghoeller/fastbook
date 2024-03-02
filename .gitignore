@@ -9,4 +9,4 @@ __pycache__/
 .gitconfig
 .ipynb_checkpoints/
 ch1-bike-reloot/figs
-my-stuff/ch10-nlp-parlament/sessions.json/
+my-stuff/ch10-nlp-parlament/sessions.json
