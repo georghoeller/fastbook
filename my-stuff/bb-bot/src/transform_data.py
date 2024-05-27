@@ -7,8 +7,15 @@ def prepare_data(data):
     '''
 
     # define pandas DF 
-    cols = ['ts','open', 'high', 'low', 'close','vol','vol_coin']
+    cols = ['time','open', 'high', 'low', 'close','vol','vol_coin']
     df = pd.DataFrame(data["result"]["list"], columns=cols)
+
+    df["time"] = pd.Timestamp(df["time"],unit="ms")
+    
+    # Extracting day and hour
+    df["day"] = df["time"].dt.day
+    df["hour"] = df["time"].dt.hour
+
 
     # applying logs
     for col in cols:
