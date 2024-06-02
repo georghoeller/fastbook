@@ -3,16 +3,20 @@
 from src.bybit import fetch_kline
 from src.transform_data import prepare_data
 from src.model import predict
-
+from src.messenger import run_send_msg
 print("import done")
 
 response = fetch_kline()
 print(response)
 
-pred_df = prepare_data(response)
-print(pred_df)
+df,stacked_df,df_single_row,df_concat = prepare_data(response)
+print(df_concat)
 
-#entry,stop_loss,take_profit = make_prediction(prep_df) # add column if trade or not 
-#write_db(prep_df)
+prediction,entry,take_profit,stop_loss = predict(df_concat) 
+
 #place_order(entry,stop_loss,take_profit)
+#if prediction != "null":
 
+msg = f"prediction:{prediction},entry:{entry},stop_loss:{stop_loss},take_profit:{take_profit}"
+print(msg)
+run_send_msg(msg)

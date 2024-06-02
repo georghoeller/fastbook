@@ -11,7 +11,7 @@ def fetch_kline():
     endpoint = "/v5/market/kline"
     symbol = "BTCUSD"  # Example trading pair
     interval = "1"    # Kline interval, e.g., "1", "5", "15", "60", "240", etc.
-    limit = 4        # Number of klines to fetch
+    limit = 10        # Number of klines to fetch
     start_time = int(time.time()) - 3600 * 24  # Start time in seconds (e.g., 24 hours ago)
     
     # Construct the URL
