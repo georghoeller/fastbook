@@ -1,5 +1,4 @@
-# In essence the function calls would look like this: 
-
+from time import ctime
 from src.bybit import fetch_kline
 from src.transform_data import prepare_data
 from src.model import predict
@@ -17,6 +16,7 @@ prediction,entry,take_profit,stop_loss = predict(df_concat)
 #place_order(entry,stop_loss,take_profit)
 #if prediction != "null":
 
-msg = f"prediction:{prediction},entry:{entry},stop_loss:{stop_loss},take_profit:{take_profit}"
+msg = f"timestamp: {ctime()} \n prediction: {prediction[0]} \n entry: {entry} \n stop_loss: {stop_loss} \n take_profit: {take_profit}"
+
 print(msg)
 run_send_msg(msg)
