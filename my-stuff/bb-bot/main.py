@@ -13,8 +13,9 @@ print(df_concat)
 
 prediction,entry,take_profit,stop_loss = predict(df_concat) 
 
-#place_order(entry,stop_loss,take_profit)
+
 #if prediction != "null":
+    #place_order(entry,stop_loss,take_profit)
 
 msg = f"timestamp: {ctime()} \n prediction: {prediction[0]} \n entry: {entry} \n stop_loss: {stop_loss} \n take_profit: {take_profit}"
 
